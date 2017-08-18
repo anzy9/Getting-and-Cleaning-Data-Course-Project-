@@ -16,7 +16,7 @@ The data linked to from the course website represent data collected from the acc
 This repository contains the following files:
 
 - `README.md`, provides the overview of the whole project.
-- `cleandata.txt`, which contains the gidy data as requested.
+- `cleandata.txt`, which contains the tidy data as requested.
 - `CodeBook.md`, indicates all the variables and summaries calculated, along with units, and any other relevant information.
 - `run_analysis.R`, the analysis script that contains the code used to complete this course and peer assignment 
 
