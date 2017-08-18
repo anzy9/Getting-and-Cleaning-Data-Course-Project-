@@ -5,7 +5,7 @@ This codebook provide additional information about the variables, data and trans
 
 The end result of whole analysis is cleandata.txt that was generated at the end of this assignment.
 Please read the [readme.md](https://github.com/anzy9/Getting-and-Cleaning-Data-Course-Project-/blob/master/README.md) for more background
-information on the whole objective of the assignment
+information on the  objective of the assignment
 
 ## Source Data
 A full description of the data used in this project can be found at [The UCI Dataset](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
@@ -24,18 +24,30 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 - Its activity label. 
 - An identifier of the subject who carried out the experiment.
 
+I purposely not provided the the description about the variables in the UCI dataset, The features_info.txt provied the description about the varaibles.
 
-## TidyData Set <a name="data"></a>
+## TidyData Set 
 
-The [`cleandata.txt`](https://github.com/anzy9/Getting-and-Cleaning-Data-Course-Project-/blob/master/cleandata.txt) data file is a text file, containing space-separated values. The end result of the this assignment
+The [`cleandata.txt`](https://github.com/anzy9/Getting-and-Cleaning-Data-Course-Project-/blob/master/cleandata.txt) data file is a text file, containing space-separated values.The data set contains mean scores for different measurement for each subject and activity performed by them
 
 ## Transformations conducted in [run_analysis.R](https://github.com/anzy9/Getting-and-Cleaning-Data-Course-Project-/blob/master/run_analysis.R)
 ### Section 0: Preprocessing
-1. The run_analysis first get the current directory and then create a directory 'course3assignment and set it as the current working directory, 
-2. It then downloads, unzips the dataset from the URl given above.
+1. The code first get the current directory and then create a directory 'course3assignment and set it as the current working directory, 
+2. It then downloads, unzips the dataset from the [URL](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 
-### Section1 : Merges the training and the test sets to create one data set.
-Train, Test data contain three files, Xtainndata, Subjectdata, and ytrain data, we need to combine them together. However, we need to work on the files before we combine them together
+### Section 1 : Merges the training and the test sets to create one data set.
+The Data folder contains following files
+features.txt
+activity_labels.txt
+subject_train.txt
+x_train.txt
+y_train.txt
+subject_test.txt
+x_test.txt
+y_test.txt
+
+Following steps were followed to combine the train and test data
+
 1. Create the activity data from activity.txt
 2. Create features dataset from features.txt
 3. Rename the subjectTrainingData columns to SubjectID
@@ -47,11 +59,11 @@ Train, Test data contain three files, Xtainndata, Subjectdata, and ytrain data, 
 9. Combine TrainData and TestData using Rbind
 
 ### Section 2: Extracts only the measurements on the mean and standard deviation for each measurement. 
-Get the columns names in character variable and then a create logcal vector that contains TRUE values for the AcivityID,SubjectID, mean and stdev columns and ignore others columns
-filteredActivityData was then created by subsetting the data with logical vector.
+Get the columns names in character variable and then a create logical vector that contains TRUE values for the AcivityID, SubjectID, mean and stdev columns and ignore other columns
+filteredActivityData was  created by subsetting the dataset created in section 1 with logical vector.
 
 ### Section 3: Uses descriptive activity names to name the activities in the data set
-Merge the filterActiviyData with activity dataset using ActivityID as key.
+Merge the filteredActivityData with activity dataset using ActivityID as key.
 
 ### Section 4: Appropriately label the data set with descriptive activity names.
 Use gsub function for pattern replacement to clean up the labels
