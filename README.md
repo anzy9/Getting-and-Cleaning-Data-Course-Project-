@@ -2,7 +2,7 @@
 
 Hello
 
-This is the Repo for Getting and Cleaning Data Course Course 3 in Coursera Data Science Specialization
+This is the Repo for Getting and Cleaning Data Course,  Course 3 in Coursera Data Science Specialization
 
 
 ### Overview
