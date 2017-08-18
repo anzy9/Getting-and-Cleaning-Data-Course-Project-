@@ -22,6 +22,7 @@ This repository contains the following files:
 
 ### Project Summary
 The following is a summary description of the project instructions
+
 Use the run_analysis.R file to
 1. Download the data from the url provided in the course assignment instrcution
 2. The code will create the appropraite directory to download the data and will also unzip them
