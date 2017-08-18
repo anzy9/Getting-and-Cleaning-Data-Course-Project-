@@ -67,6 +67,7 @@ Merge the filteredActivityData with activity dataset using ActivityID as key.
 
 ### Section 4: Appropriately label the data set with descriptive activity names.
 Use gsub function for pattern replacement to clean up the labels
+Replaced
 1. t to Time_
 2. f to Freq_
 3. - to " "
