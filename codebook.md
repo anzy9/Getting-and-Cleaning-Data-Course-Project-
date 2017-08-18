@@ -32,7 +32,7 @@ The [`cleandata.txt`](https://github.com/anzy9/Getting-and-Cleaning-Data-Course-
 
 ## Transformations conducted in [run_analysis.R](https://github.com/anzy9/Getting-and-Cleaning-Data-Course-Project-/blob/master/run_analysis.R)
 ### Section 0: Preprocessing
-1. The code first get the current directory and then create a directory 'course3assignment and set it as the current working directory, 
+1. The code first get the current directory and then create a directory 'course3assignment' and set it as the current working directory, 
 2. It then downloads, unzips the dataset from the [URL](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 
 ### Section 1 : Merges the training and the test sets to create one data set.
