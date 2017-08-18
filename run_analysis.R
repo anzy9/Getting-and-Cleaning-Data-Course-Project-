@@ -1,7 +1,7 @@
 #Load the libraries used for analysis
 library(data.table)
 library(dplyr)
-#Get the current directory and change the current directory to your working directory
+#Get the current directory and create a folder called Course3Assignment, this will be workign directory for this code
 getwd()
 mainDir<-getwd()
 subDir<-"Course3Assignment"
@@ -18,6 +18,8 @@ url<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%2
 download.file(url, dest="dataset.zip", mode="wb") 
 unzip ("dataset.zip", exdir=getwd())
 #Following is the code as requested for the assignment
+
+
 #1. Merges the training and the test sets to create one data set.
 #Get the featuresand activity data
 features<-read.table("./UCI HAR Dataset/features.txt",header = FALSE)
@@ -65,13 +67,10 @@ filterflag = (grepl("ActivityID",cnames) | grepl("SubjectID",cnames) | grepl("-m
 
 filteredActivityData<-activityData[filterflag==TRUE]
 
-
 #3 .Uses descriptive activity names to name the activities in the data set
 #Using ActivityID as key , we will be naming the labels i.e.Using ActivityID in Activity Table and ProcessActivityData
 # to get the FinaActivityData table with descriptive activities
 filteredActivityData<-merge(filteredActivityData,activity,by='ActivityID',all.x = TRUE)
-colnames(activityData)
-
 
 #4. Appropriately labels the data set with descriptive variable names
 
@@ -84,12 +83,6 @@ LabelledColumns<-gsub("Body","Body_",LabelledColumns)#Replace [Body] with [Body 
 LabelledColumns<-gsub("Gravity","Gravity_",LabelledColumns) #Replace with[Gravity] with [Gravity ]
 LabelledColumns<-gsub(" ","_",LabelledColumns)
 LabelledColumns<-gsub("\\(\\)","",LabelledColumns)
-
-                      
-#From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject., LabelledColumns) #remove any punctuation from the columns names and replace with ""
-
-colnames(filteredActivityData)<-LabelledColumns
-
 
 #5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
